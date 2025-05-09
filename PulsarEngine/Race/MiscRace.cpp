@@ -5,6 +5,7 @@
 #include <MarioKartWii/GlobalFunctions.hpp>
 #include <MarioKartWii/Driver/DriverManager.hpp>
 #include <Settings/Settings.hpp>
+#include <Settings/SettingsParam.hpp>
 
 namespace Pulsar {
 namespace Race {
@@ -123,6 +124,30 @@ kmWrite16(0x80569F68, 0x4800);
 
 //CtrlItemWindow
 kmWrite24(0x808A9C16, 'PUL'); //item_window_new -> item_window_PUL
+
+//Look Behind.落下時でも後ろを見る.
+kmWrite32(0x805A228C, 0x60000000);
+
+//Pause before start.スタート前にポーズ可.
+kmWrite32(0x80856a28, 0x48000050);
+
+//Don't Lose VR.切断時のVR減少なし.
+kmWrite32(0x80856560, 0x60000000);
+
+//Force 30 FPS [Vabold]
+kmWrite32(0x80554224, 0x3C808000);
+kmWrite32(0x80554228, 0x88841204);
+kmWrite32(0x8055422C, 0x48000044);
+
+ void FPSPatch() {
+    FPSPatchHook = 0x00;
+    if (Settings::Mgr::Get().GetSettingValue(Pulsar::Settings::SETTINGSTYPE_CUSTOM1, SETTINGMENU_RADIO_FRAME) == MenuSetting_FPS_30FPS) {
+        FPSPatchHook = 0x00FF0100;
+    }
+    Pulsar::System::CacheInvalidateAddress(FPSPatchHook);
+ }
+static PageLoadHook PatchFPS(FPSPatch);
+//the end of 30fps option
 
 const char* ChangeItemWindowPane(ItemId id, u32 itemCount) {
     const bool feather = System::sInstance->IsContext(PULSAR_FEATHER);

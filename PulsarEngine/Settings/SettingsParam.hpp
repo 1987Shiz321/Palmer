@@ -4,14 +4,17 @@
 #include <PulsarSystem.hpp>
 #include <Config.hpp>
 
+//symbols.txtに格納
+extern u32 FPSPatchHook;
+
 namespace Pulsar {
 namespace UI { class SettingsPanel; }
 namespace Settings {
 
 class Params {
 public:
-    static const int pulsarPageCount = 5;
-    static const int userPageCount = 0;
+    static const int pulsarPageCount = 6;
+    static const int userPageCount = 0; //カスタム設定用のページ数とあるが、上のpulsarPageCountを増やすほうが好ましい.
     static const int pageCount = pulsarPageCount + userPageCount;
 
     static const int maxRadioCount = 6; //per page, due to space
@@ -32,11 +35,11 @@ enum Type {
     SETTINGSTYPE_HOST,
     SETTINGSTYPE_OTT,
     SETTINGSTYPE_KO,
+    SETTINGSTYPE_CUSTOM1,
 };
 
 //If you want to add settings to your packs, they go in this enum, and GetUserSettingValue should be used to obtain the value of a given setting
 enum UserType {
-
 };
 
 }//namespace Settings
@@ -49,6 +52,7 @@ enum MenuSettings {
     SETTINGMENU_RADIO_MUSIC = 2,
     SETTINGMENU_SCROLL_BOOT = 0 + 6
 };
+
 
 enum RaceSettings {
     SETTINGRACE_RADIO_MII,
@@ -84,6 +88,11 @@ enum KOSettings {
 
 };
 
+enum CustomSettings1 {
+    SETTINGMENU_RADIO_INPUT = 0, //インプット用
+    SETTINGMENU_RADIO_FRAME = 1, //FPSの設定用
+};
+
 //MENU SETTINGS
 enum MenuSettingFastMenus {
     MENUSETTING_FASTMENUS_DISABLED = 0x0,
@@ -108,6 +117,8 @@ enum MenuSettingBoot {
     MENUSETTING_BOOT_L3,
     MENUSETTING_BOOT_L4
 };
+
+
 
 //RACE SETTINGS
 enum RaceSettingMII {
@@ -218,6 +229,21 @@ enum KOSettingRacesPerKO {
     KOSETTING_RACESPERKO_4
 };
 //KOSETTINGS
+
+//ここからカスタム設定
+//インプット用の設定
+enum MenuSettingInput {
+    MENUSETTING_INPUT_DISABLED = 0x0,
+    MENUSETTING_INPUT_ENABLED = 0x1,
+    MENUSETTING_INPUT_FORCED = 0x2
+};
+
+//フレームレート用の設定
+enum MenuSettingFPS{
+    MenuSetting_FPS_60FPS = 0x0,
+    MenuSetting_FPS_30FPS = 0x1
+};
+
 
 }//namespace Pulsar
 
