@@ -1,4 +1,54 @@
-# Pulsar
+# Palmer
+
+[Pulsar](https://github.com/MelgMKW/Pulsar)を弄って少しだけ便利にした。リポジトリの名前は響きが似てるだけで大きな意味はありません。
+### Authorについて
+C++のプログラミングが苦手ですので、コードが読みにくいと思います。申し訳ないです...
+
+
+## 必要なもの
+- 総合開発環境(Visual Studio 2022)
+- コードエディタ(Visual Studio Code)
+- CodeWarrior Special Edition for MPC55xx/MPC56xx v2.10
+
+CodeWarriorの入手方法については[Kamek](https://github.com/Treeki/Kamek/tree/master?tab=readme-ov-file#requirements)のリポジトリを参照すること
+
+## 変更内容
+PulsarPackCreator:
+- Sceneフォルダをパック生成時に追加するように修正
+
+Resourcesフォルダに格納されているSZSを改変することもできます。これによってパック生成時に個別でファイルを移植する手間が省けます。
+- XMLの名前変換方法を修正
+
+特定の行番号を指定して置換していた元コードを修正して、将来的なテンプレート変更にも対応できるようになりました。お好みでBase.xmlを変更しても動作します。
+
+Engine(Code.pul):
+- Inputviewer(コントローラの入力表示)の実装(設定で変更可能)
+- フレームレートオプションの実装(設定で変更可能)
+- スピードメーターの強化(左揃え/右揃えに対応)
+- ハネアイテムつきのOTTオプションを削除
+- レース中/リザルトでフレンドコード/国旗を表示する仕様を追加(表示には別途アセットが必要)
+- フレンドルームの「チーム変更」を行う場面で、右下の表示が意図しないものになっている不具合を修正
+- フレンドルームにおいて、レース数が意図しないものになっている不具合を修正
+- InputviewerおよびSpeedometerに関して、relで定義されたカラーに依存しないよう変更(BRLYTの編集でカラーを自由に変えられるようになりました)
+- その他、便利系コードを追加(詳細はMiscUI.cpp / MiscRace.cppをご覧ください)
+
+
+Other:
+- UIAssets.szs内のサブファイルをバニラ準拠に修正
+- RaceAssets.szs内のサブファイルの座標、レイアウトファイル等を修正
+- 日本語テキストの追加(進行中)
+
+## 未実装の機能(実装できるかは不明)
+- VR変動システムを変更(減少時、部屋のレートに大きな影響を受けない)
+- 複数言語への対応(英語/日本語)
+- カスタムゲームモードの追加(フレンドルーム限定で。Countdown, Blue Shell Showdownなど？)
+- リージョンカラーの設定(Miiの服に依存させたい)
+- Extended Team(拡張チーム戦)の実装
+- 接続先のサーバ変更(WiiLink)については検討中です。
+
+優先度は上にあるほど高めです。また、こちらの内容は更新予定です。
+
+以下原文
 
 Pulsar is a Mario Kart Wii Kamek-Based engine to create CT distributions. It comes with its own [software](../main/PulsarPackCreator/Executable) to aid in building custom distributions, and multiple quality of life features:
 
