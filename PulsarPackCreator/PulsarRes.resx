@@ -121,6 +121,9 @@
   <data name="BMG" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\BMG.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="Channel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Scene\Channel.szs;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="Code" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\Code.pul;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -142,8 +145,14 @@
   <data name="cygz" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\cygz.dll;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="Files" xml:space="preserve">
+  <data name="Earth" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Scene\Earth.szs;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Files" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
+  </data>
+  <data name="Globe" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Scene\Globe.szs;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\Pulsar.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -154,8 +163,23 @@
   <data name="MAP" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\MAP.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;iso-8859-1</value>
   </data>
+  <data name="MenuMulti" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Scene\MenuMulti.szs;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="MenuOther" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Scene\MenuOther.szs;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="MenuSingle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Scene\MenuSingle.szs;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="RaceAssets" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\RaceAssets.szs;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Title" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Scene\Title.szs;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Title_J" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Scene\Title_J.szs;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="UIAssets" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\UIAssets.szs;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>

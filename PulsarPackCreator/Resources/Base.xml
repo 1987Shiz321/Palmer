@@ -32,6 +32,25 @@
 		<folder external="/{$pack}/Assets" disc="/" create="true"/>
 		<folder external="/{$pack}/CTBRSTM" disc="/Sound/strm" create="true"/>
 		<folder external="/{$pack}/Ghosts/Experts" disc="/Experts" create="true" />
+
+		<file disc="/Scene/Model/Earth.szs"		external="/{$pack}/Scene/Earth.szs" />
+		<file disc="/Scene/UI/Globe.szs" 		external="/{$pack}/Scene/Globe.szs" />
+		<file disc="/Scene/UI/Channel.szs" 		external="/{$pack}/Scene/Channel.szs" />
+		<file disc="/Scene/UI/MenuSingle.szs" 	external="/{$pack}/Scene/MenuSingle.szs" />
+		<file disc="/Scene/UI/MenuOther.szs" 	external="/{$pack}/Scene/MenuOther.szs" />
+		<file disc="/Scene/UI/MenuMulti.szs" 	external="/{$pack}/Scene/MenuMulti.szs" />
+		<file disc="/Scene/UI/Title.szs" 		external="/{$pack}/Scene/Title.szs" />
+		
+		<file disc="/Scene/UI/Title_J.szs" external="/{$pack}/Scene/Title_J.szs" create="true"/>
+		<file disc="/Scene/UI/Title_U.szs" external="/{$pack}/Scene/Title_J.szs" create="true"/>
+		<file disc="/Scene/UI/Title_M.szs" external="/{$pack}/Scene/Title_J.szs" create="true"/>
+		<file disc="/Scene/UI/Title_Q.szs" external="/{$pack}/Scene/Title_J.szs" create="true"/>
+		<file disc="/Scene/UI/Title_E.szs" external="/{$pack}/Scene/Title_J.szs" create="true"/>
+		<file disc="/Scene/UI/Title_F.szs" external="/{$pack}/Scene/Title_J.szs" create="true"/>
+		<file disc="/Scene/UI/Title_G.szs" external="/{$pack}/Scene/Title_J.szs" create="true"/>
+		<file disc="/Scene/UI/Title_I.szs" external="/{$pack}/Scene/Title_J.szs" create="true"/>
+		<file disc="/Scene/UI/Title_S.szs" external="/{$pack}/Scene/Title_J.szs" create="true"/>
+		<file disc="/Scene/UI/Title_K.szs" external="/{$pack}/Scene/Title_J.szs" create="true"/>
 	</patch>	
 	<patch id="CTGPLoad">
 		<folder external="/ctgpr/My Stuff" />

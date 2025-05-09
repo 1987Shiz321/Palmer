@@ -79,6 +79,8 @@ namespace Pulsar_Pack_Creator.IO
             Directory.CreateDirectory($"{modFolder}/Tracks");
             Directory.CreateDirectory($"{modFolder}/Ghosts");
             Directory.CreateDirectory($"{modFolder}/Ghosts/Experts");
+            //Scene用のフォルダを作成.
+            Directory.CreateDirectory($"{modFolder}/Scene");
 
             Directory.CreateDirectory("output/Riivolution");
 
@@ -130,6 +132,16 @@ namespace Pulsar_Pack_Creator.IO
                         File.WriteAllBytes($"{modFolder}/Binaries/Code.pul", PulsarRes.Code);
                         File.WriteAllBytes($"{modFolder}/Assets/RaceAssets.szs", PulsarRes.RaceAssets);
                         File.WriteAllBytes($"{modFolder}/Assets/CommonAssets.szs", PulsarRes.CommonAssets);
+
+                        //Scene用のファイルをコピー.
+                        File.Copy("temp/Channel.szs", $"{modFolder}/Scene/Channel.szs", true);
+                        File.Copy("temp/Earth.szs", $"{modFolder}/Scene/Earth.szs", true);
+                        File.Copy("temp/Globe.szs", $"{modFolder}/Scene/Globe.szs", true);
+                        File.Copy("temp/MenuMulti.szs", $"{modFolder}/Scene/MenuMulti.szs", true);
+                        File.Copy("temp/MenuOther.szs", $"{modFolder}/Scene/MenuOther.szs", true);
+                        File.Copy("temp/MenuSingle.szs", $"{modFolder}/Scene/MenuSingle.szs", true);
+                        File.Copy("temp/Title.szs", $"{modFolder}/Scene/Title.szs", true);
+                        File.Copy("temp/Title_J.szs", $"{modFolder}/Scene/Title_J.szs", true);
 
                         bool hasCustomIcons = false;
                         Process wimgtProcess = new Process();
@@ -895,6 +907,32 @@ namespace Pulsar_Pack_Creator.IO
             char[] delims = new[] { '\r', '\n' };
             string[] xml = PulsarRes.XML.Split(delims, StringSplitOptions.RemoveEmptyEntries);
 
+            // ランダムID生成（LoadPackなどに使う）
+            uint rand = (uint)new Random().Next(1 << 8);
+            string randomName = $"{parameters.modFolderName}{rand}";
+
+            for (int i = 0; i < xml.Length; i++)
+            {
+                // 動的なID置換：patch id に "LoadPack", "Load" が含まれている場合はランダム付き
+                if (xml[i].Contains("patch id=\"{$pack}LoadPack\"") ||
+                    xml[i].Contains("patch id=\"{$pack}Load\"") ||
+                    xml[i].Contains("<patch id=\"{$pack}LoadPack\"") ||
+                    xml[i].Contains("<patch id=\"{$pack}Load\""))
+                {
+                    xml[i] = xml[i].Replace("{$pack}", randomName);
+                }
+                else
+                {
+                    xml[i] = xml[i].Replace("{$pack}", parameters.modFolderName);
+                }
+            }
+
+            File.WriteAllLines($"output/Riivolution/{parameters.modFolderName}.xml", xml);
+
+            /*
+            char[] delims = new[] { '\r', '\n' };
+            string[] xml = PulsarRes.XML.Split(delims, StringSplitOptions.RemoveEmptyEntries);
+
             xml[3] = xml[3].Replace("{$pack}", parameters.modFolderName);
             xml[28] = xml[28].Replace("{$pack}", parameters.modFolderName);
             xml[29] = xml[29].Replace("{$pack}", parameters.modFolderName);
@@ -902,17 +940,31 @@ namespace Pulsar_Pack_Creator.IO
             xml[31] = xml[31].Replace("{$pack}", parameters.modFolderName);
             xml[32] = xml[32].Replace("{$pack}", parameters.modFolderName);
             xml[33] = xml[33].Replace("{$pack}", parameters.modFolderName);
+            xml[34] = xml[34].Replace("{$pack}", parameters.modFolderName);
+            xml[35] = xml[35].Replace("{$pack}", parameters.modFolderName);
+            xml[36] = xml[36].Replace("{$pack}", parameters.modFolderName);
+            xml[37] = xml[37].Replace("{$pack}", parameters.modFolderName);
+            xml[38] = xml[38].Replace("{$pack}", parameters.modFolderName);
+            xml[39] = xml[39].Replace("{$pack}", parameters.modFolderName);
+            xml[40] = xml[40].Replace("{$pack}", parameters.modFolderName);
+            xml[41] = xml[41].Replace("{$pack}", parameters.modFolderName);
             xml[42] = xml[42].Replace("{$pack}", parameters.modFolderName);
             xml[43] = xml[43].Replace("{$pack}", parameters.modFolderName);
             xml[44] = xml[44].Replace("{$pack}", parameters.modFolderName);
             xml[45] = xml[45].Replace("{$pack}", parameters.modFolderName);
 
+            xml[54] = xml[54].Replace("{$pack}", parameters.modFolderName);
+            xml[55] = xml[55].Replace("{$pack}", parameters.modFolderName);
+            xml[56] = xml[56].Replace("{$pack}", parameters.modFolderName);
+            xml[57] = xml[57].Replace("{$pack}", parameters.modFolderName);
+
             uint rand = (uint)new Random().Next(1 << 8); ;
             xml[6] = xml[6].Replace("{$pack}", $"{parameters.modFolderName}{rand}");
             xml[14] = xml[14].Replace("{$pack}", $"{parameters.modFolderName}{rand}");
             xml[19] = xml[19].Replace("{$pack}", $"{parameters.modFolderName}{rand}");
-            xml[41] = xml[41].Replace("{$pack}", $"{parameters.modFolderName}{rand}");
+            xml[53] = xml[53].Replace("{$pack}", $"{parameters.modFolderName}{rand}");
             File.WriteAllLines($"output/Riivolution/{parameters.modFolderName}.xml", xml);
+            */
         }
 
     }

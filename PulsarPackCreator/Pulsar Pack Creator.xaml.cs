@@ -431,7 +431,7 @@ namespace Pulsar_Pack_Creator
                         isOptionsError = true;
                         break;
                     case IO.Result.NoWiimmfi:
-                        message = "Please select a Wiimfi region";
+                        message = "リージョン番号が未設定です。";
                         isOptionsError = true;
                         break;
                     case IO.Result.NoModName:

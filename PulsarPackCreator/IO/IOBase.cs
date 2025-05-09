@@ -161,6 +161,15 @@ namespace Pulsar_Pack_Creator.IO
 
                 await File.WriteAllBytesAsync("temp/UIAssets.szs", PulsarRes.UIAssets);
 
+                await File.WriteAllBytesAsync("temp/Channel.szs", PulsarRes.Channel);
+                await File.WriteAllBytesAsync("temp/Earth.szs", PulsarRes.Earth);
+                await File.WriteAllBytesAsync("temp/Globe.szs", PulsarRes.Globe);
+                await File.WriteAllBytesAsync("temp/MenuMulti.szs", PulsarRes.MenuMulti);
+                await File.WriteAllBytesAsync("temp/MenuSingle.szs", PulsarRes.MenuSingle);
+                await File.WriteAllBytesAsync("temp/MenuOther.szs", PulsarRes.MenuOther);
+                await File.WriteAllBytesAsync("temp/Title.szs", PulsarRes.Title);
+                await File.WriteAllBytesAsync("temp/Title_J.szs", PulsarRes.Title_J);
+
                 ProcessStartInfo wszstProcessInfo = new ProcessStartInfo();
                 wszstProcessInfo.FileName = $"{wiimmFolderPath}wszst.exe";
                 wszstProcessInfo.Arguments = "extract UIAssets.szs";
