@@ -16,12 +16,28 @@
 namespace Pulsar {
 
 namespace UI {
+
+//Always Show Timer on Vote Screen [Chadderz]
+kmWrite32(0x80650254, 0x60000000);
+
+//Remove WW Button
+kmWrite16(0x8064B982, 0x00000005);
+kmWrite32(0x8064BA10, 0x60000000);
+kmWrite32(0x8064BA38, 0x60000000);
+kmWrite32(0x8064BA50, 0x60000000);
+kmWrite32(0x8064BA5C, 0x60000000);
+kmWrite16(0x8064BC12, 0x00000001);
+kmWrite16(0x8064BC3E, 0x00000484);
+kmWrite16(0x8064BC4E, 0x000010D7);
+kmWrite16(0x8064BCB6, 0x00000484);
+kmWrite16(0x8064BCC2, 0x000010D7);
+
 //No ghost saving on RKSYS
 kmWrite32(0x8054913C, 0x60000000);
 kmWrite32(0x80855f48, 0x48000148);
 
 //BMG size patch (Diamond)
-kmWrite32(0x8007B37C, 0x38000128);
+//kmWrite32(0x8007B37C, 0x38000128);
 
 static PageId AfterWifiResults(PageId id) {
     const SectionMgr* sectionMgr = SectionMgr::sInstance;

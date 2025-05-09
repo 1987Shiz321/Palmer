@@ -11,6 +11,7 @@
 #include <Settings/UI/ExpWFCMainPage.hpp>
 #include <UI/ChangeCombo/ChangeCombo.hpp>
 
+
 //Pulsar Custom Pages:
 #include <UI/TeamSelect/TeamSelect.hpp>
 #include <AutoTrackSelect/AutoVote.hpp>
@@ -118,7 +119,9 @@ void ExpSection::CreatePulPages() {
         this->CreateAndInitPage(*this, PAGE_MESSAGEBOX);
         this->CreateAndInitPage(*this, PAGE_SELECT_STAGE_MGR);
     }
-    if(this->Get<ExpFroom>() != nullptr) this->CreateAndInitPage(*this, PULPAGE_TEAMSELECT); //can also put it as part of the case froom of createandinitpage
+    if(this->Get<ExpFroom>() != nullptr) {
+        this->CreateAndInitPage(*this, PULPAGE_TEAMSELECT); //can also put it as part of the case froom of createandinitpage
+    }
 }
 
 void ExpSection::CreateAndInitPage(ExpSection& self, u32 id) {
@@ -182,7 +185,7 @@ void ExpSection::CreateAndInitPage(ExpSection& self, u32 id) {
             break;
         case TeamSelect::id:
             page = new TeamSelect;
-            break;
+            break;  
         case KO::RaceEndPage::id:
             initId = KO::RaceEndPage::fakeId;
             page = new KO::RaceEndPage;
