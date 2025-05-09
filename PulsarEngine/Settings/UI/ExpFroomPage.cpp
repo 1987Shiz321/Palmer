@@ -24,7 +24,7 @@ void ExpFroom::OnInit() {
     FriendRoom::OnInit();
 
     this->AddControl(5, settingsButton, 0);
-    this->settingsButton.Load(UI::buttonFolder, "FroomButton", "Settings", 1, 0, false);
+    this->settingsButton.Load(UI::buttonFolder, "Settings1P", "Settings", 1, 0, false);
     this->settingsButton.buttonId = 5;
     this->settingsButton.SetOnClickHandler(this->onSettingsClickHandler, 0);
     this->settingsButton.SetOnSelectHandler(this->onButtonSelectHandler);
@@ -50,7 +50,7 @@ void ExpFroom::ExtOnButtonSelect(PushButton& button, u32 hudSlotId) {
         else if(this->topSettingsPage == PAGE_BATTLE_MODE_SELECT) bmgId += 2;
         this->bottomText.SetMessage(bmgId, 0);
     }
-    else if(button.buttonId == 6) this->bottomText.SetMessage(BMG_TEAMS_BOTTOM, 0);
+    else if(button.buttonId == 6) this->bottomText.SetMessage(BMG_TEAMS_BOTTOM_ADDED, 0);
     else this->OnButtonSelect(button, hudSlotId);
 }
 
