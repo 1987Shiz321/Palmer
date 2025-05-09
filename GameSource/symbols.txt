@@ -171,6 +171,7 @@ Write__4ISFSFiPCvUi = 0x8016b2c0
 Close__4ISFSFi = 0x8016B384
 
 #GX
+FPSPatchHook = 0x80001202
 __GXDefaultTexRegionCallback = 0x8016b49c
 __GXShutdown = 0x8016b5b4
 __GXInitRevisionBits = 0x8016b720
@@ -1867,5 +1868,14 @@ IsBattle__Fv = 0x80860a8c
 GetItemIconPaneName__F6ItemIdUi = 0x80860af0
 TimerToTextInfo__FRC5TimerRQ24Text4Info = 0x808608e4
 
-
-
+sInstance__Q25RKNet11USERHandler = 0x809c2108
+saveFcAndCountryHookExit__Fv = 0x806513e4
+saveFcAndCountryInLiveHookExit__Fv = 0x8060a2b4
+displayFcAndCountryHookExit__Fv = 0x807f0050
+displayFcAndCountryInResultFillNameHookExit__Fv = 0x807f5300
+displayFcAndCountryInResultFillTimeHookExit__Fv = 0x807f5968
+MD5Digest__FPCUcUiPUc = 0x800f0e08
+MD5Digest = 0x800f0e08
+MD5Update = 0x800f0264
+PicturePaneExists__15LayoutUIControlFPCc = 0x8063e328
+sprintf = 0x80011a2c
