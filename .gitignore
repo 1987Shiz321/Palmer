@@ -23,6 +23,7 @@ KamekLinker\.vs/
 \KamekLinker\obh
 KamekLinker/obh/
 KamekLinker\obj/
+DisplayableSymbols.md
 
 # Compiled Object files
 *.slo
